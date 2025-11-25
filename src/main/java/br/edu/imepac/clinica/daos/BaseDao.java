@@ -68,4 +68,16 @@ public abstract class BaseDao {
     protected void fecharRecursos(Connection conn, PreparedStatement stmt) {
         fecharRecursos(conn, stmt, null);
     }
+    public boolean verificarLogin(String usuario, String senha) throws SQLException {
+    try (Connection conn = getConnection();
+        PreparedStatement ps = conn.prepareStatement("SELECT * FROM usuarios WHERE usuario = ? AND senha = ?")) {
+        ps.setString(1, usuario);
+        ps.setString(2, senha);
+        try (ResultSet rs = ps.executeQuery()) {
+            return rs.next();
+        }
+    }
+
+    }
 }
+

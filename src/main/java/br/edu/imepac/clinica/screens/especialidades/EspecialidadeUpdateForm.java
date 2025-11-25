@@ -44,6 +44,7 @@ public class EspecialidadeUpdateForm extends BaseScreen {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         imageIcon = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -54,6 +55,8 @@ public class EspecialidadeUpdateForm extends BaseScreen {
         LimparBtn = new javax.swing.JButton();
         fecharBtn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+
+        jLabel5.setText("jLabel5");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,6 +85,7 @@ public class EspecialidadeUpdateForm extends BaseScreen {
             }
         });
 
+        fecharBtn.setForeground(new java.awt.Color(204, 0, 0));
         fecharBtn.setText("Fechar");
         fecharBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,9 +117,10 @@ public class EspecialidadeUpdateForm extends BaseScreen {
                                 .addGap(18, 18, 18)
                                 .addComponent(fecharBtn))
                             .addComponent(descricaoField, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addContainerGap(36, Short.MAX_VALUE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel1)
+                        .addComponent(jLabel2)))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,6 +221,7 @@ public class EspecialidadeUpdateForm extends BaseScreen {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField nomeField;
     private javax.swing.JButton salvarBtn;
     // End of variables declaration//GEN-END:variables
