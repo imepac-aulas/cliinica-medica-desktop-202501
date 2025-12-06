@@ -19,11 +19,11 @@ import java.sql.SQLException;
  * @author evertonhf
  */
 public abstract class BaseDao {
-    
+
     private static final String URL = "jdbc:mysql://localhost:3306/clinica";
-    private static final String USUARIO = "clinica";
-    private static final String SENHA = "Aa123456!";
-    
+    private static final String USUARIO = "root";
+    private static final String SENHA = "123456";
+
     /**
      * Obtém uma conexão ativa com o banco de dados.
      * 
@@ -33,32 +33,35 @@ public abstract class BaseDao {
     protected Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USUARIO, SENHA);
     }
-    
+
     /**
      * Fecha os recursos de forma segura, evitando leaks de memória.
      * 
      * @param conn conexão com o banco
      * @param stmt comando SQL preparado
-     * @param rs conjunto de resultados (opcional)
+     * @param rs   conjunto de resultados (opcional)
      */
     protected void fecharRecursos(Connection conn, PreparedStatement stmt, ResultSet rs) {
         try {
-            if (rs != null) rs.close();
+            if (rs != null)
+                rs.close();
         } catch (SQLException e) {
             System.err.println("Erro ao fechar ResultSet: " + e.getMessage());
         }
         try {
-            if (stmt != null) stmt.close();
+            if (stmt != null)
+                stmt.close();
         } catch (SQLException e) {
             System.err.println("Erro ao fechar PreparedStatement: " + e.getMessage());
         }
         try {
-            if (conn != null) conn.close();
+            if (conn != null)
+                conn.close();
         } catch (SQLException e) {
             System.err.println("Erro ao fechar Connection: " + e.getMessage());
         }
     }
-    
+
     /**
      * Fecha apenas a conexão e o PreparedStatement (para operações sem ResultSet).
      * 
