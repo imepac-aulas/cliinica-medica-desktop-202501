@@ -1,0 +1,12 @@
+package br.edu.imepac.clinica.entidades;
+
+public enum EnumFuncionalidades {
+    CADASTRAR_MEDICO,
+    AGENDAR_CONSULTA,
+    REALIZAR_CONSULTA,
+    CADASTRAR_PACIENTE,
+    CADASTRAR_FUNCIONARIO,
+    CADASTRAR_ESPECIALIDADE,
+    CADASTRAR_CONVENIO,
+    GERAR_RELATORIOS
+}
